@@ -236,6 +236,7 @@ TODO (Application)
  * Server side validation for forms, e.g. use of @Valid and BindingResult
  * Full set of responsive styles
  * Check use of replace() when changing route state, e.g. in the error cases it is not quite right in all cases
+ * External module configuration
  * Create account (e.g. with an email validation workflow)
  * Delete account
  * Custom Spring Data repository methods, also custom MongoDB queries using the builder pattern
