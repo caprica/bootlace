@@ -94,7 +94,7 @@ Project Status
 
 This project is a work-in-progress.
 
-What has been provided works, and demonstrate a working implementation of many of the project
+What has been provided works, and demonstrates a working implementation of many of the project
 goals.
 
 However, there is still more to be done. 
