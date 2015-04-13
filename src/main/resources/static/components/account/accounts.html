@@ -1,0 +1,30 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12" role="main">
+            <h2>Accounts</h2>
+            <hr>
+            <div class="table-responsive">
+                <table class="table table-condensed table-bordered">
+                    <thead>
+                        <tr>
+                            <th class="col-xs-3">Username</th>
+                            <th class="col-xs-9">Roles</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="account in accounts.accounts">
+                            <td>
+                                <a href="accounts/{{account.id}}">{{account.username}}</a>
+                            </td>
+                            <td>
+                                <span ng-repeat="role in account.roles">
+                                    {{role}}<span ng-if="!$last">, </span>
+                                </span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>            
+        </div>
+    </div>
+</div>

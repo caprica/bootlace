@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html lang="en" ng-app="bootlace" ng-strict-di>
+    <head>
+        <base href="/app/">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title ng-bind="'Bootlace - ' + $root.pageTitle">Bootlace</title>
+        <script src="/assets/index.js"></script>
+        <link rel="stylesheet" href="/assets/main.css">
+    </head>
+    <body ng-controller="SessionController">
+        <div id="wrap">
+            <div class="navbar navbar-default navbar-fixed-top">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="home">Bootlace</a>
+                    </div>
+                    <div class="collapse navbar-collapse" ng-controller="NavigationController as navigation">
+                        <ul class="nav navbar-nav">
+                            <li ng-class="{active: 'home' == navigation.active()}"><a href="home">Home</a></li>
+                            <li ng-if="isAuthorisedFor(roles.admin)" ng-class="{active: 'accounts' == navigation.active()}"><a href="accounts">Accounts</a></li>
+                            <li ng-class="{active: 'about' == navigation.active()}"><a href="about">About</a></li>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li ng-if="!currentUser" ng-class="{active: 'login' == navigation.active()}"><a href="login">Login</a></li>
+                            <li ng-if="currentUser" ng-class="{active: 'profile' == navigation.active()}" class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{currentUser.name}} <span class="caret"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="profile">Profile</a></li>
+                                    <li class="divider"></li>
+                                    <li class="dropdown-header">Session</li>
+                                    <li><a href="" ng-click="logout()">Logout</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- FIXME Unfortunately autoscroll will be delayed until after the animation has finished -->
+            <main ng-view class="view-fade-in" autoscroll="true">
+            </main>
+        </div>
+        <footer class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12 text-center">
+                    <p>
+                        &copy; <year></year> <a href="http://capricasoftware.co.uk">Caprica Software Limited</a>
+                    </p>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>

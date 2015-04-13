@@ -1,0 +1,35 @@
+
+<div class="container-fluid" id="login-container">
+    <div class="row">
+        <div class="col-md-offset-4 col-md-4" role="main">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Login</h3>
+                </div>
+                <div class="panel-body">
+                    <div ng-show="login.loginFailure" class="alert alert-danger" role="alert">
+                        <strong><i class="fa fa-exclamation-triangle"></i> Login Failed</strong>
+                        <p>
+                            Please check your username and password and try again.
+                        </p>
+                    </div>
+                    <form name="login.form" novalidate role="form">
+                        <div class="form-group">
+                            <label for="username">Username</label>
+                            <input id="username" type="text" autofocus required ng-model="login.credentials.username" name="username" class="form-control" placeholder="Enter username">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input id="password" type="password" required ng-model="login.credentials.password" name="password" class="form-control" placeholder="Enter password">
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <button ng-click="login.login(login.credentials)" ng-disabled="login.form.$invalid || login.isUnchanged()" type="submit" class="btn btn-primary">Login</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

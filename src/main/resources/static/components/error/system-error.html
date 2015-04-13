@@ -1,0 +1,16 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12" role="main">
+            <h2>System Error</h2>
+            <hr>
+            <div class="alert alert-danger" role="alert">
+                <div ng-if="lastErrorResponse.status">
+                    <strong>{{lastErrorResponse.status}} {{lastErrorResponse.error}}</strong> {{lastErrorResponse.message}}
+                </div>
+                <div ng-if="!lastErrorResponse.status">
+                    <strong>System Error</strong> A system error has occurred.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
