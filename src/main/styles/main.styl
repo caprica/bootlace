@@ -1,0 +1,98 @@
+/*
+ * Main application Stylus stylesheet.
+ *
+ * To import components with Stylus you must make sure you set the proper directory by passing the
+ * "-I <directory>" switch when executing the Stylus command. You can add multiple directories by
+ * passing multiple "-I <directory>" switches.
+ *
+ * For this project, using "npm", the required directory is "node_modules", so:
+ *
+ *     stylus input.styl -I node_modules -m -o output/
+ *
+ * If you set the directory in this way, you can then in principle use simple imports like:
+ *
+ *    @import bootstrap
+ *
+ * An import like this will look for "index.styl" inside a "bootstrap" directory, inside any of the
+ * directories specified by "-I" switches.
+ *
+ * You can instead specify only the bootstrap components you need like this:
+ *
+ *     @import "bootstrap/buttons"
+ *     @import "bootstrap/forms"
+ *     @import "bootstrap/grid"
+ *     @import "bootstrap/scaffolding"
+ *
+ * Note that this time the quotation characters are required.
+ *
+ * In the case of bootstrap, we actually use a "bootstrap-styl" component, so to use a simple
+ * import like this we could use:
+ *
+ *     stylus input.styl -I node_modules -I node_modules/bootstrap-styl -m -o output/
+ *
+ * This is fine and will work, but if you use many stylesheet components it can lead to specifying
+ * many individual directories and you may prefer to just set one directory (e.g. "node_modules")
+ * and import components like this instead:
+ *
+ *     @import "bootstrap-styl/bootstrap"
+ *
+ * This import will look for "index.styl" inside the specified directory, inside any of the
+ * directories specified by "-I" switches.
+ *
+ * Note that this time the quotation characters are required.
+ *
+ * To import regular CSS, you must pass the "--include-css" switch, so:
+ *
+ *     stylus input.styl --include-css -I node_modules -m -o output/
+ *
+ * The import then looks like this:
+ *
+ *     @import "node_modules/angular-toastr/dist/angular-toastr.css"
+ *
+ */
+
+// Bootstrap
+@import "bootstrap-styl/bootstrap"
+
+// Font-Awesome
+$fa-font-path = '//netdna.bootstrapcdn.com/font-awesome/4.3.0/fonts'
+@import "font-awesome-stylus/stylus"
+
+// angular-toastr
+@import "node_modules/angular-toastr/dist/angular-toastr.css"
+
+// Bootswatch theme
+// FIXME would like this to come from package.json really
+theme = 'cerulean'
+//theme = 'cosmo'
+//theme = 'cyborg'
+//theme = 'darkly'
+//theme = 'flatly'
+//theme = 'journal'
+//theme = 'readable'
+//theme = 'sandstone'
+//theme = 'simplex'
+//theme = 'slate'
+//theme = 'spacelab'
+//theme = 'superhero'
+//theme = 'united'
+//theme = 'yeti'
+
+@import "bootswatch/" + theme + "/bootstrap.css"
+
+// Application page layout
+@import "layout"
+
+// Animation for the ng-view
+@import "view-animation"
+
+// Bespoke styles
+
+#login-container
+    margin: 100px 0
+
+footer
+    background-color #f5f5f5
+
+ng\:cloak], [ng-cloak], .ng-cloak
+    display none !important

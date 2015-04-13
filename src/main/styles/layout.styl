@@ -1,0 +1,23 @@
+// This stylesheet implements the footer always fixed to the bottom of the window.
+
+footer-size = 60px
+
+html,
+body
+    height 100%
+
+#wrap
+    min-height 100%
+    height auto !important
+    height 100%
+    margin 0 auto -(footer-size)
+    padding 0 0 footer-size
+
+footer
+    height footer-size
+
+footer p
+    margin 20px 0
+
+#wrap main
+    padding footer-size 15px 0
