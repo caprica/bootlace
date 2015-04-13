@@ -67,11 +67,11 @@
         "prebuild"           : "npm run clean -s",
 
         "build:scripts"      : "browserify -d src/main/javascript/entry.js -o src/main/resources/static/assets/index.js",
-        "build:styles"       : "stylus src/main/css/main.styl --include-css -I node_modules -m -o src/main/resources/static/assets",
+        "build:styles"       : "stylus src/main/styles/main.styl --include-css -I node_modules -m -o src/main/resources/static/assets",
         "build"              : "npm run build:scripts -s && npm run build:styles -s",
 
         "watch:scripts"      : "nodemon -q -w src/main/javascript --ext 'js' --exec 'npm run build:scripts'",
-        "watch:styles"       : "nodemon -q -w src/main/css --ext 'styl' --exec 'npm run build:styles'",
+        "watch:styles"       : "nodemon -q -w src/main/styles --ext 'styl' --exec 'npm run build:styles'",
         "watch"              : "parallelshell 'npm run watch:scripts -s' 'npm run watch:styles -s'",
 
         "lint"               : "jshint src/main/javascript/**.js"
