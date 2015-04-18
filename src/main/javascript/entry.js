@@ -38,7 +38,8 @@
         require('angular-route'          ),
         require('angular-cache'          ),
 
-        // Shimmed module dependencies
+        // Shimmed module dependencies - the names here are those used in the "browserify-shim"
+        // section of the project "package.json"
         require('angular-google-maps'    ).name,
         require('angular-toastr'         ).name,
         require('restangular'            ).name,
