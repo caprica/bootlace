@@ -26,7 +26,7 @@
     window.jQuery = require('jquery');
 
     require('bootstrap');
-    
+
     var angular = require('angular');
 
     // Application module definition
@@ -39,6 +39,7 @@
         require('angular-cache'          ),
 
         // Shimmed module dependencies
+        require('angular-google-maps'    ).name,
         require('angular-toastr'         ).name,
         require('restangular'            ).name,
     
@@ -48,10 +49,11 @@
         require('./components/common'    ).name,
         require('./components/error'     ).name,
         require('./components/home'      ).name,
+        require('./components/map'       ).name,
         require('./components/navigation').name,
         require('./components/profile'   ).name,
         require('./components/security'  ).name
-    
+
     ]);
 
 }());
