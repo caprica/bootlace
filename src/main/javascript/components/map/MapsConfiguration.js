@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * Google maps configuration.
+ * Google Maps configuration.
  *
  * @param uiGmapGoogleMapApiProvider
  */
@@ -39,6 +39,7 @@ function MapsConfiguration(uiGmapGoogleMapApiProvider) {
         libraries: 'places'
 
     });
+
 };
 
 module.exports = MapsConfiguration;
