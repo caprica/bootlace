@@ -29,7 +29,14 @@ function MapsConfiguration(uiGmapGoogleMapApiProvider) {
          *
          * If you specify a 'retired' version, then the oldest available version will be used.
          */
-        v: '3'
+        v: '3',
+
+        /**
+         * Include additional Google Maps libraries.
+         *
+         * The 'places' library is required for the map search box.
+         */
+        libraries: 'places'
 
     });
 };
