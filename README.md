@@ -110,10 +110,10 @@ Prerequisites
 
 The following is the minimum list of prerequisites:
 
- - [ ] You must have a MongoDB database installed.
- - [ ] You must have Java 1.8 installed.
- - [ ] You must have Maven 3.x installed.
- - [ ] You must have Node.js installed, at least for "npm".
+ - You must have a MongoDB database installed.
+ - You must have Java 1.8 installed.
+ - You must have Maven 3.x installed.
+ - You must have Node.js installed, at least for "npm".
 
 As is the case with a lot of modern web development, a Linux or Linux-like environment is
 preferred - this is especially the case for the Javascript and CSS development tools and anything
