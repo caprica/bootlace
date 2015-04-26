@@ -57,34 +57,34 @@ For convenience, some other popular and useful technologies are also integrated.
 
 Additional front-end libraries include:
 
- * angular-toastr;
- * bootswatch;
- * blueimp-gallery;
- * font-awesome;
- * moment.js
+ - angular-toastr;
+ - bootswatch;
+ - blueimp-gallery;
+ - font-awesome;
+ - moment.js
 
 Some of these libraries are chosen because they require special handling when integrating (e.g.
 Browserify shims).
 
 Additional middle-tier libraries include:
 
- * BCrypt;
- * Google Guava;
- * OWASP Java HTML Sanitizer
+ - BCrypt;
+ - Google Guava;
+ - OWASP Java HTML Sanitizer
 
 Additional front-end build tools include:
 
- * jshint;
- * npm;
- * Browserify;
- * Stylus.
+ - jshint;
+ - npm;
+ - Browserify;
+ - Stylus.
 
 Additional project build tools include:
 
- * Cobertura;
- * FindBugs;
- * JUnit;
- * PMD.
+ - Cobertura;
+ - FindBugs;
+ - JUnit;
+ - PMD.
 
 Bootlace uses as much as possible the latest versions of the various libraries and frameworks.
 
@@ -110,10 +110,10 @@ Prerequisites
 
 The following is the minimum list of prerequisites:
 
- * You must have a MongoDB database installed.
- * You must have Java 1.8 installed.
- * You must have Maven 3.x installed.
- * You must have Node.js installed, at least for "npm".
+ - [ ] You must have a MongoDB database installed.
+ - [ ] You must have Java 1.8 installed.
+ - [ ] You must have Maven 3.x installed.
+ - [ ] You must have Node.js installed, at least for "npm".
 
 As is the case with a lot of modern web development, a Linux or Linux-like environment is
 preferred - this is especially the case for the Javascript and CSS development tools and anything
@@ -212,11 +212,11 @@ Credits
 
 This project was based _in part_ on material published as below:
 
- * [Techniques for Authentication in AngularJS Applications](https://medium.com/opinionated-angularjs/techniques-for-authentication-in-angularjs-applications-7bbf0346acec)
- * [spring-security-angular](https://github.com/dsyer/spring-security-angular)
- * [AngularJS with Browserify](http://benclinkinbeard.com/talks/2014/ng-conf)
- * [Angular Style Guide](https://github.com/johnpapa/angular-styleguide)
- * [How to Use npm as a Build Tool](http://blog.keithcirkel.co.uk/how-to-use-npm-as-a-build-tool)
+ - [Techniques for Authentication in AngularJS Applications](https://medium.com/opinionated-angularjs/techniques-for-authentication-in-angularjs-applications-7bbf0346acec)
+ - [spring-security-angular](https://github.com/dsyer/spring-security-angular)
+ - [AngularJS with Browserify](http://benclinkinbeard.com/talks/2014/ng-conf)
+ - [Angular Style Guide](https://github.com/johnpapa/angular-styleguide)
+ - [How to Use npm as a Build Tool](http://blog.keithcirkel.co.uk/how-to-use-npm-as-a-build-tool)
 
 Pulling everything together was not easy, most material out there explains only 80% of what is
 needed and eschews many tricksy but vital things.
@@ -225,35 +225,35 @@ needed and eschews many tricksy but vital things.
 Other Recommended Links
 -----------------------
 
- * [Ben Clinkinbeard](http://benclinkinbeard.com) - for general articles on AngularJS and related things
+ - [Ben Clinkinbeard](http://benclinkinbeard.com) - for general articles on AngularJS and related things
 
 
 TODO (Application)
 ------------------
 
- * WebSockets integration
- * Form validation errors on client
- * Server side validation for forms, e.g. use of @Valid and BindingResult
- * Full set of responsive styles
- * Check use of replace() when changing route state, e.g. in the error cases it is not quite right in all cases
- * External module configuration
- * Create account (e.g. with an email validation workflow)
- * Delete account
- * Custom Spring Data repository methods, also custom MongoDB queries using the builder pattern
- * File upload
- * Javascript image gallery
- * Javascript unit tests
- * Java unit tests
- * Launch npm watch process via maven command?
- * Custom methods in MongoDB repository;
- * Full editing of an example resource, CRUD, showing normal usage of Restangular;
+ - [ ] WebSockets integration
+ - [ ] Form validation errors on client
+ - [ ] Server side validation for forms, e.g. use of @Valid and BindingResult
+ - [ ] Full set of responsive styles
+ - [ ] Check use of replace() when changing route state, e.g. in the error cases it is not quite right in all cases
+ - [ ] External module configuration
+ - [ ] Create account (e.g. with an email validation workflow)
+ - [ ] Delete account
+ - [ ] Custom Spring Data repository methods, also custom MongoDB queries using the builder pattern
+ - [ ] File upload
+ - [ ] Javascript image gallery
+ - [ ] Javascript unit tests
+ - [ ] Java unit tests
+ - [ ] Launch npm watch process via maven command?
+ - [ ] Custom methods in MongoDB repository;
+ - [ ] Full editing of an example resource, CRUD, showing normal usage of Restangular;
 
 
 TODO (Technical)
 ----------------
 
- * Minification of assets, cache busting filename hashes, and applying an asset map;
- * Integrate live-reload for browsers?
- * Use authenticated username and password for MongoDB database connection;
- * Build and deploy to OpenShift, or Heroku or something.
- * Custom secure the management endpoints, see https://github.com/spring-projects/spring-boot/blob/master/spring-boot-docs/src/main/asciidoc/production-ready-features.adoc
+ - [ ] Minification of assets, cache busting filename hashes, and applying an asset map;
+ - [ ] Integrate live-reload for browsers?
+ - [ ] Use authenticated username and password for MongoDB database connection;
+ - [ ] Build and deploy to OpenShift, or Heroku or something.
+ - [ ] Custom secure the management endpoints, see https://github.com/spring-projects/spring-boot/blob/master/spring-boot-docs/src/main/asciidoc/production-ready-features.adoc
