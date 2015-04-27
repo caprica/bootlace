@@ -30,7 +30,7 @@ import uk.co.caprica.bootlace.domain.account.Account;
  * Simply declaring this interface generates a repository with standard CRUD methods.
  * <p>
  * In this case an extra method is declared to find a resource by a particular field - the
- * implementation for this method is generated automatically.
+ * implementation for this method is generated automatically based on the method signature.
  */
 public interface AccountRepository extends MongoRepository<Account, String> {
 
