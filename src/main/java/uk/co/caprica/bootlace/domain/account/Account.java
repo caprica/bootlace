@@ -24,6 +24,8 @@ import java.util.List;
 
 import javax.validation.constraints.NotNull;
 
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import uk.co.caprica.bootlace.domain.AbstractEntity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -31,6 +33,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 /**
  * Model for an Account resource.
  */
+@Document
 public class Account extends AbstractEntity {
 
     /**
