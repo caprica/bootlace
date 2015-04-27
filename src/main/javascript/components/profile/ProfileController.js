@@ -13,6 +13,10 @@ function ProfileController(profile, Restangular, toastr) {
     // Use the view-model pattern
     var vm = this;
 
+    vm.reset       = Reset;
+    vm.isUnchanged = IsUnchanged;
+    vm.save        = Save;
+
     // Store the master model so that it can be restored later if "reset" is used
     vm.master = profile;
 
@@ -33,7 +37,7 @@ function ProfileController(profile, Restangular, toastr) {
      * 
      * The model values are overwritten by copying the original master model.
      */
-    vm.reset = function() {
+    function Reset() {
         vm.model = angular.copy(vm.master);
         resetForm();
     };
@@ -43,7 +47,7 @@ function ProfileController(profile, Restangular, toastr) {
      * 
      * @return true only if the form is unchanged
      */
-    vm.isUnchanged = function() {
+    function IsUnchanged() {
         return angular.equals(vm.model, vm.master);
     };
 
@@ -61,7 +65,7 @@ function ProfileController(profile, Restangular, toastr) {
      * so the PUT would actually go to the (non-existent) "/profile/{id}" resource, so a custom PUT
      * is required. 
      */
-    vm.save = function() {
+    function Save() {
         Restangular.one('profile').customPUT(vm.model).then(
             function onSuccess(updatedModel) {
                 toastr.success('Profile saved');
