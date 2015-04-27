@@ -34,9 +34,13 @@
         "bootswatch"         : "~3.3",
         "browserify"         : "~9.0",
         "browserify-shim"    : "~3.8",
+        "cpy"                : "~3.1",
         "font-awesome-stylus": "~4.3",
+        "hashmark"           : "~2.0",
+        "jade"               : "~1.9",
         "jshint"             : "~2.6",
         "minifyify"          : "~6.4",
+        "mkdirp"             : "~0.5",
         "nib"                : "~1.1",
         "nodemon"            : "~1.3",
         "parallelshell"      : "~1.1",
@@ -65,17 +69,17 @@
 
     "scripts": {
 
-        "clean"              : "rm -f src/main/resources/static/assets/index.js ; rm -f src/main/resources/static/assets/main.css*",
+        "clean"              : "rimraf target/assets ; rimraf src/main/resources/static/assets/*.html ; rimraf src/main/resources/static/assets/*.js ; rimraf src/main/resources/static/assets/*.css ; rimraf src/main/resources/static/assets/*.map",
 
-        "prebuild"           : "npm run clean -s",
+        "prebuild"           : "npm run clean -s ; mkdirp target/assets",
 
-        "build:scripts"      : "browserify -d src/main/javascript/entry.js -o src/main/resources/static/assets/index.js",
-        "build:styles"       : "stylus src/main/styles/main.styl --include-css -I node_modules -m -o src/main/resources/static/assets",
-        "build"              : "npm run build:scripts -s && npm run build:styles -s",
+        "build:scripts"      : "browserify -d src/main/javascript/entry.js | hashmark -n target/assets/index.js -l 8 -m target/assets/assets.json -s src/main/resources/static/assets/{name}-{hash}{ext}",
+        "build:styles"       : "stylus src/main/styles/main.styl --include-css -I node_modules -m -o target/assets && hashmark -n assets/main.css -l 8 -m target/assets/assets.json -s target/assets/main.css src/main/resources/static/assets/{name}-{hash}{ext} && cpy 'target/assets/*.map' src/main/resources/static/assets",
+        "build:markup"       : "jade -P -o src/main/resources/static/assets src/main/markup/index.jade --obj target/assets/assets.json",
 
-        "watch:scripts"      : "nodemon -q -w src/main/javascript --ext 'js' --exec 'npm run build:scripts'",
-        "watch:styles"       : "nodemon -q -w src/main/styles --ext 'styl' --exec 'npm run build:styles'",
-        "watch"              : "parallelshell 'npm run watch:scripts -s' 'npm run watch:styles -s'",
+        "build"              : "npm run build:scripts -s && npm run build:styles -s && npm run build:markup -s",
+
+        "watch"              : "nodemon -q -w src/main/javascript -w src/main/styles -w src/main/markup --ext js,styl,css,jade --exec 'npm run build'",
 
         "lint"               : "jshint src/main/javascript/**.js"
 

@@ -68,7 +68,7 @@ public class ApplicationController {
     @RequestMapping("app/**")
     public String app() {
         logger.debug("app()");
-        return "forward:/app.html";
+        return "forward:/assets/index.html";
     }
 
 }

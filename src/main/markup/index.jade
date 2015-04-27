@@ -1,0 +1,39 @@
+doctype html
+html(lang="en" ng-app="bootlace" ng-strict-di)
+    head
+        base(href="/app/")
+        meta(charset="utf-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        title(ng-bind="'Bootlace - ' + $root.pageTitle") Bootlace
+        script(src="#{locals['target/assets/index.js'].substr('src/main/resources/static'.length)}")
+        link(rel="stylesheet" href="#{locals['target/assets/main.css'].substr('src/main/resources/static'.length)}")
+    body(ng-controller="SessionController")
+        #wrap
+            .navbar.navbar-default.navbar-fixed-top
+                .container-fluid
+                    .navbar-header
+                        button.navbar-toggle(type="button" data-toggle="collapse" data-target=".navbar-collapse")
+                            span.icon-bar
+                            span.icon-bar
+                            span.icon-bar
+                        a.navbar-brand(href="home") Bootlace
+                    .collapse.navbar-collapse(ng-controller="NavigationController as navigation")
+                        ul.nav.navbar-nav
+                            li(ng-class="{active: 'home' == navigation.active()}"): a(href="home") Home
+                            li(ng-if="isAuthorisedFor(roles.admin)" ng-class="{active: 'accounts' == navigation.active()}"): a(href="accounts") Accounts
+                            li(ng-class="{active: 'about' == navigation.active()}"): a(href="about") About
+                        ul.nav.navbar-nav.navbar-right
+                            li(ng-if="!currentUser" ng-class="{active: 'login' == navigation.active()}"): a(href="login") Login
+                            li.dropdown(ng-if="currentUser" ng-class="{active: 'profile' == navigation.active()}")
+                                a.dropdown-toggle(href="#" data-toggle="dropdown" role="button" aria-expanded="false") #[i.fa.fa-user.fa-fw] {{currentUser.name}} #[span.caret]
+                                ul.dropdown-menu(role="menu")
+                                    li: a(href="profile") #[i.fa.fa-pencil-square-o.fa-fw] Profile
+                                    li.divider
+                                    li.dropdown-header Session
+                                    li: a(href="" ng-click="logout()") #[i.fa.fa-sign-out.fa-fw) Logout
+            // FIXME Unfortunately autoscroll will be delayed until after the animation has finished
+            main(ng-view class="view-fade-in" autoscroll="true")
+        footer.container-fluid
+            .row
+                .col-xs-12.text-center
+                    p &copy; #[year] #[a(href="http://capricasoftware.co.uk") Caprica Software Limited]
