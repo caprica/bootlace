@@ -22,11 +22,14 @@ package uk.co.caprica.bootlace.domain.profile;
 
 import javax.validation.constraints.NotNull;
 
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import uk.co.caprica.bootlace.domain.AbstractAuditableEntity;
 
 /**
  * Model for a Profile resource.
  */
+@Document
 public class Profile extends AbstractAuditableEntity {
 
     @NotNull
