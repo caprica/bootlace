@@ -25,7 +25,7 @@
         "font-awesome"       : "~4.3",
         "jquery"             : "~2.1",
         "lodash"             : "~3.6",
-        "moment"             : "~2.10",
+        "moment"             : "~2.11.2",
         "restangular"        : "~1.5"
     },
 
